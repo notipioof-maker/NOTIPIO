@@ -518,5 +518,47 @@ if(document.getElementById('question-text')) loadQuestion();
     </div>
   </div>
 
+  <script>
+// ===== CONTROL DE PESTAÑAS PRINCIPALES =====
+function mostrarTab(tab) {
+  // Oculta todo
+  document.getElementById('tab-hemeroteca').style.display = 'none';
+  document.getElementById('tab-gamer').style.display = 'none';
+
+  // Resetea botones
+  document.getElementById('btnHemeroteca').style.background = '#1a1a1a';
+  document.getElementById('btnGamer').style.background = '#1a1a1a';
+
+  // Muestra el que toca
+  if(tab === 'hemeroteca') {
+    document.getElementById('tab-hemeroteca').style.display = 'block';
+    document.getElementById('btnHemeroteca').style.background = '#c41e3a';
+  } else {
+    document.getElementById('tab-gamer').style.display = 'block';
+    document.getElementById('btnGamer').style.background = '#c41e3a';
+  }
+}
+
+// ===== CONTROL DE SUB-PESTAÑAS GAMER =====
+function mostrarSubTab(subtab) {
+  document.getElementById('subtab-juego').style.display = 'none';
+  document.getElementById('subtab-trivia').style.display = 'none';
+
+  document.getElementById('btnJuego').style.background = 'white';
+  document.getElementById('btnJuego').style.color = '#c41e3a';
+  document.getElementById('btnTrivia').style.background = 'white';
+  document.getElementById('btnTrivia').style.color = '#c41e3a';
+
+  if(subtab === 'juego') {
+    document.getElementById('subtab-juego').style.display = 'block';
+    document.getElementById('btnJuego').style.background = '#c41e3a';
+    document.getElementById('btnJuego').style.color = 'white';
+  } else {
+    document.getElementById('subtab-trivia').style.display = 'block';
+    document.getElementById('btnTrivia').style.background = '#c41e3a';
+    document.getElementById('btnTrivia').style.color = 'white';
+  }
+}
+</script>
 </body>
 </html>
