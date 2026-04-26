@@ -9,26 +9,22 @@
     .logo-header { text-align: center; margin-bottom: 10px; }
     .logo-header img { width: 180px; height: auto; margin: 10px 0; }
     h1 { color: #c41e3a; text-align: center; font-size: 48px; margin: 5px 0 20px 0; }
-  .cabecera { background: #1a1a1a; color: white; padding: 10px; text-align: center; margin-bottom: 20px; }
-  .ultimo { background: white; padding: 20px; border: 3px solid #c41e3a; margin-bottom: 30px; }
-  .grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(250px, 1fr)); gap: 20px; }
-  .numero { background: white; padding: 20px; border: 1px solid #ddd; text-align: center; }
-  .numero h3 { margin: 0 0 15px 0; font-size: 20px; color: #c41e3a; }
-  .btn-leer { display: inline-block; padding: 10px 20px; background: #c41e3a; color: white; text-decoration: none; border-radius: 5px; font-weight: bold; }
-  .btn-leer:hover { background: #a01830; }
+    .cabecera { background: #1a1a1a; color: white; padding: 10px; text-align: center; margin-bottom: 20px; }
+    .ultimo { background: white; padding: 20px; border: 3px solid #c41e3a; margin-bottom: 30px; }
+    .grid-numeros { display: grid; grid-template-columns: repeat(auto-fill, minmax(250px, 1fr)); gap: 20px; }
+    .numero { background: white; padding: 20px; border: 1px solid #ddd; text-align: center; }
+    .numero h3 { margin: 0 0 15px 0; font-size: 20px; color: #c41e3a; }
+    .btn-leer { display: inline-block; padding: 10px 20px; background: #c41e3a; color: white; text-decoration: none; border-radius: 5px; font-weight: bold; }
+    .btn-leer:hover { background: #a01830; }
     iframe { border: none; }
-    
     .comentarios { background: white; padding: 30px 20px; margin-top: 30px; border: 1px solid #ddd; }
     .comentarios h2 { color: #c41e3a; text-align: center; margin-bottom: 10px; }
     .comentarios p { text-align: center; color: #666; font-size: 14px; margin-bottom: 20px; }
-    
-    .redes { background: #1a1a1a; color: white; padding: 30px 20px; margin-top: 40px; text-align: center; }
-    .redes-bloque { margin-bottom: 25px; }
-    .redes-bloque h3 { color: #c41e3a; margin: 10px 0; font-size: 18px; }
-    .redes-links a { display: inline-block; margin: 5px 10px; padding: 8px 15px; background: #c41e3a; color: white; border-radius: 5px; text-decoration: none; font-size: 14px; }
-    .redes-links a:hover { background: #a01830; }
-    .email-notipio { margin-top: 15px; font-size: 16px; }
-    .email-notipio a { color: #c41e3a; background: white; padding: 8px 15px; border-radius: 5px; text-decoration: none; }
+    .options-grid button { padding: 15px; border: 2px solid #1a1a1a; background: white; border-radius: 10px; cursor: pointer; font-size: 1rem; transition: 0.2s; text-align: left; }
+    .options-grid button:hover:not(:disabled) { background: #f0f0f0; border-color: #c41e3a; }
+    .options-grid button:disabled { cursor: not-allowed; opacity: 0.7; }
+    .feedback-correct { background-color: #d4edda; color: #155724; border: 1px solid #c3e6cb; }
+    .feedback-wrong { background-color: #f8d7da; color: #721c24; border: 1px solid #f5c6cb; }
   </style>
 </head>
 <body>
@@ -42,147 +38,123 @@
   <p style="text-align: center;">Periódico/Revista de Pio FC femenil y varonil</p>
 
   <div class="ultimo">
-  <h2>ÚLTIMO NÚMERO: NOTIPIO #11</h2>
-  <iframe 
-    src="https://archive.org/embed/notipio-11" 
-    width="100%" 
-    height="650" 
-    style="border: none; background: white;" 
-    allowfullscreen
-    loading="lazy">
-  </iframe>
-</div>
+    <h2>ÚLTIMO NÚMERO: NOTIPIO #11</h2>
+    <iframe 
+      src="https://archive.org/embed/notipio-11" 
+      width="100%" 
+      height="650" 
+      style="border: none; background: white;" 
+      allowfullscreen
+      loading="lazy">
+    </iframe>
+  </div>
 
   <!-- PESTAÑAS DE NAVEGACIÓN -->
-<div style="text-align: center; margin: 30px 0 20px 0;">
-  <button id="btnHemeroteca" onclick="mostrarTab('hemeroteca')" style="padding: 12px 25px; background: #c41e3a; color: white; border: none; border-radius: 8px 8px 0 0; cursor: pointer; font-size: 16px; font-weight: bold; margin: 0 5px;">📰 Hemeroteca</button>
-  <button id="btnGamer" onclick="mostrarTab('gamer')" style="padding: 12px 25px; background: #1a1a1a; color: white; border: none; border-radius: 8px 8px 0 0; cursor: pointer; font-size: 16px; font-weight: bold; margin: 0 5px;">🐥 Zona Gamer</button>
-</div>
-
-<!-- CONTENIDO PESTAÑA 1: HEMEROTECA -->
-<div id="tab-hemeroteca" class="tab-contenido" style="display: block;">
-  <div class="hemeroteca">
-    <h2>Hemeroteca NOTIPIO</h2>
-    <div class="grid-numeros">
-      <div class="numero">
-        <h3>NOTIPIO #10</h3>
-        <a href="https://archive.org/details/notipio-10" target="_blank" class="btn-leer">Leer #10</a>
-      </div>
-      <div class="numero">
-        <h3>NOTIPIO #9</h3>
-        <a href="https://archive.org/details/notipio-9" target="_blank" class="btn-leer">Leer #9</a>
-      </div>
-      <div class="numero">
-        <h3>NOTIPIO #8</h3>
-        <a href="https://archive.org/details/notipio-8" target="_blank" class="btn-leer">Leer #8</a>
-      </div>
-      <div class="numero">
-        <h3>NOTIPIO #7</h3>
-        <a href="https://archive.org/details/notipio-7" target="_blank" class="btn-leer">Leer #7</a>
-      </div>
-      <div class="numero">
-        <h3>NOTIPIO #6</h3>
-        <a href="https://archive.org/details/notipio-6" target="_blank" class="btn-leer">Leer #6</a>
-      </div>
-      <div class="numero">
-        <h3>NOTIPIO #5</h3>
-        <a href="https://archive.org/details/notipio-5" target="_blank" class="btn-leer">Leer #5</a>
-      </div>
-      <div class="numero">
-        <h3>NOTIPIO #4</h3>
-        <a href="https://archive.org/details/notipio-4" target="_blank" class="btn-leer">Leer #4</a>
-      </div>
-      <div class="numero">
-        <h3>NOTIPIO #3</h3>
-        <a href="https://archive.org/details/notipio-3" target="_blank" class="btn-leer">Leer #3</a>
-      </div>
-      <div class="numero">
-        <h3>NOTIPIO #2</h3>
-        <a href="https://archive.org/details/notipio-2" target="_blank" class="btn-leer">Leer #2</a>
-      </div>
-      <div class="numero">
-        <h3>NOTIPIO #1</h3>
-        <a href="https://archive.org/details/notipio-1" target="_blank" class="btn-leer">Leer #1</a>
-      </div>
-    </div>
-  </div>
-</div>
-
-<!-- CONTENIDO PESTAÑA 2: ZONA GAMER -->
-<div id="tab-gamer" class="tab-contenido" style="display: none;">
-  <div style="text-align: center; margin: 20px 0;">
-    <button onclick="mostrarSubTab('juego')" id="btnJuego" style="padding: 8px 20px; background: #c41e3a; color: white; border: 2px solid #c41e3a; border-radius: 5px; cursor: pointer; margin: 0 5px; font-weight: bold;">🎮 Pollito al Ataque</button>
-    <button onclick="mostrarSubTab('trivia')" id="btnTrivia" style="padding: 8px 20px; background: white; color: #c41e3a; border: 2px solid #c41e3a; border-radius: 5px; cursor: pointer; margin: 0 5px; font-weight: bold;">🧠 Trivia del Mes</button>
+  <div style="text-align: center; margin: 30px 0 20px 0;">
+    <button id="btnHemeroteca" onclick="mostrarTab('hemeroteca')" style="padding: 12px 25px; background: #c41e3a; color: white; border: none; border-radius: 8px 8px 0 0; cursor: pointer; font-size: 16px; font-weight: bold; margin: 0 5px;">📰 Hemeroteca</button>
+    <button id="btnGamer" onclick="mostrarTab('gamer')" style="padding: 12px 25px; background: #1a1a1a; color: white; border: none; border-radius: 8px 8px 0 0; cursor: pointer; font-size: 16px; font-weight: bold; margin: 0 5px;">🐥 Zona Gamer</button>
   </div>
 
-  <div id="subtab-juego" class="subtab-contenido" style="display: block;">
-    <div class="comentarios" style="margin-top: 0;">
-      <p style="text-align: center; color: #666;">Ayuda al pollito a llegar lo más lejos. ¡Esquiva los conos!</p>
-      <div style="text-align: center; margin: 20px 0;">
-        <canvas id="juegoPio" width="600" height="200" style="border:3px solid #c41e3a; background:#7ec850; display: block; margin: 0 auto; max-width: 100%; border-radius: 8px;"></canvas>
-      </div>
-      <div style="text-align: center; font-size: 18px; margin: 10px 0;">
-        <span style="margin: 0 15px;">🏃 Distancia: <strong><span id="score">0</span>m</strong></span>
-        <span style="margin: 0 15px;">🏆 Récord: <strong><span id="record">0</span>m</strong></span>
-        <span style="margin: 0 15px;">❤️ Vidas: <strong><span id="vidas">3</span></strong></span>
-      </div>
-      <div style="text-align: center; margin: 15px 0;">
-        <button id="btnIniciar" onclick="iniciarJuego()" style="padding: 12px 30px; background: #c41e3a; color: white; border: none; border-radius: 8px; cursor: pointer; font-size: 16px; font-weight: bold;">▶️ Jugar</button>
-        <p style="font-size: 14px; color: #666; margin-top: 10px;">PC: Barra espaciadora para saltar | Celular: Toca la pantalla</p>
+  <!-- CONTENIDO PESTAÑA 1: HEMEROTECA -->
+  <div id="tab-hemeroteca" class="tab-contenido" style="display: block;">
+    <div class="hemeroteca">
+      <h2>Hemeroteca NOTIPIO</h2>
+      <div class="grid-numeros">
+        <div class="numero">
+          <h3>NOTIPIO #10</h3>
+          <a href="https://archive.org/details/notipio-10" target="_blank" class="btn-leer">Leer #10</a>
+        </div>
+        <div class="numero">
+          <h3>NOTIPIO #9</h3>
+          <a href="https://archive.org/details/notipio-9" target="_blank" class="btn-leer">Leer #9</a>
+        </div>
+        <div class="numero">
+          <h3>NOTIPIO #8</h3>
+          <a href="https://archive.org/details/notipio-8" target="_blank" class="btn-leer">Leer #8</a>
+        </div>
+        <div class="numero">
+          <h3>NOTIPIO #7</h3>
+          <a href="https://archive.org/details/notipio-7" target="_blank" class="btn-leer">Leer #7</a>
+        </div>
+        <div class="numero">
+          <h3>NOTIPIO #6</h3>
+          <a href="https://archive.org/details/notipio-6" target="_blank" class="btn-leer">Leer #6</a>
+        </div>
+        <div class="numero">
+          <h3>NOTIPIO #5</h3>
+          <a href="https://archive.org/details/notipio-5" target="_blank" class="btn-leer">Leer #5</a>
+        </div>
+        <div class="numero">
+          <h3>NOTIPIO #4</h3>
+          <a href="https://archive.org/details/notipio-4" target="_blank" class="btn-leer">Leer #4</a>
+        </div>
+        <div class="numero">
+          <h3>NOTIPIO #3</h3>
+          <a href="https://archive.org/details/notipio-3" target="_blank" class="btn-leer">Leer #3</a>
+        </div>
+        <div class="numero">
+          <h3>NOTIPIO #2</h3>
+          <a href="https://archive.org/details/notipio-2" target="_blank" class="btn-leer">Leer #2</a>
+        </div>
+        <div class="numero">
+          <h3>NOTIPIO #1</h3>
+          <a href="https://archive.org/details/notipio-1" target="_blank" class="btn-leer">Leer #1</a>
+        </div>
       </div>
     </div>
   </div>
 
-  <div id="subtab-trivia" class="subtab-contenido" style="display: none;">
-    <div class="comentarios" style="margin-top: 0;">
-      <p style="text-align: center; color: #666;">Demuestra cuánto sabes de Pío FC</p>
-      <div id="quiz-container" style="background: #ffffff; padding: 25px; border-radius: 15px; max-width: 600px; margin: 0 auto;">
-        <div id="quiz-content">
-          <div id="progress" style="text-align: center; color: #c41e3a; font-weight: bold; margin-bottom: 15px;">Pregunta 1 de 5</div>
-          <p class="question" id="question-text" style="font-size: 1.3rem; font-weight: bold; margin-bottom: 20px; color: #1a1a1a;"></p>
-          <div class="options-grid" id="options-buttons" style="display: grid; gap: 10px;"></div>
-          <div id="feedback-container" style="margin-top: 20px; padding: 15px; border-radius: 10px; display: none; line-height: 1.5;">
-            <strong id="feedback-title"></strong>
-            <p id="feedback-text" style="margin: 5px 0 0 0;"></p>
+  <!-- CONTENIDO PESTAÑA 2: ZONA GAMER -->
+  <div id="tab-gamer" class="tab-contenido" style="display: none;">
+    <div style="text-align: center; margin: 20px 0;">
+      <button onclick="mostrarSubTab('juego')" id="btnJuego" style="padding: 8px 20px; background: #c41e3a; color: white; border: 2px solid #c41e3a; border-radius: 5px; cursor: pointer; margin: 0 5px; font-weight: bold;">🎮 Pollito al Ataque</button>
+      <button onclick="mostrarSubTab('trivia')" id="btnTrivia" style="padding: 8px 20px; background: white; color: #c41e3a; border: 2px solid #c41e3a; border-radius: 5px; cursor: pointer; margin: 0 5px; font-weight: bold;">🧠 Trivia del Mes</button>
+    </div>
+
+    <div id="subtab-juego" class="subtab-contenido" style="display: block;">
+      <div class="comentarios" style="margin-top: 0;">
+        <p style="text-align: center; color: #666;">Ayuda al pollito a llegar lo más lejos. ¡Esquiva los conos!</p>
+        <div style="text-align: center; margin: 20px 0;">
+          <canvas id="juegoPio" width="600" height="200" style="border:3px solid #c41e3a; background:#7ec850; display: block; margin: 0 auto; max-width: 100%; border-radius: 8px;"></canvas>
+        </div>
+        <div style="text-align: center; font-size: 18px; margin: 10px 0;">
+          <span style="margin: 0 15px;">🏃 Distancia: <strong><span id="score">0</span>m</strong></span>
+          <span style="margin: 0 15px;">🏆 Récord: <strong><span id="record">0</span>m</strong></span>
+          <span style="margin: 0 15px;">❤️ Vidas: <strong><span id="vidas">3</span></strong></span>
+        </div>
+        <div style="text-align: center; margin: 15px 0;">
+          <button id="btnIniciar" onclick="iniciarJuego()" style="padding: 12px 30px; background: #c41e3a; color: white; border: none; border-radius: 8px; cursor: pointer; font-size: 16px; font-weight: bold;">▶️ Jugar</button>
+          <p style="font-size: 14px; color: #666; margin-top: 10px;">PC: Barra espaciadora para saltar | Celular: Toca la pantalla</p>
+        </div>
+      </div>
+    </div>
+
+    <div id="subtab-trivia" class="subtab-contenido" style="display: none;">
+      <div class="comentarios" style="margin-top: 0;">
+        <p style="text-align: center; color: #666;">Demuestra cuánto sabes de Pío FC</p>
+        <div id="quiz-container" style="background: #ffffff; padding: 25px; border-radius: 15px; max-width: 600px; margin: 0 auto;">
+          <div id="quiz-content">
+            <div id="progress" style="text-align: center; color: #c41e3a; font-weight: bold; margin-bottom: 15px;">Pregunta 1 de 5</div>
+            <p class="question" id="question-text" style="font-size: 1.3rem; font-weight: bold; margin-bottom: 20px; color: #1a1a1a;"></p>
+            <div class="options-grid" id="options-buttons" style="display: grid; gap: 10px;"></div>
+            <div id="feedback-container" style="margin-top: 20px; padding: 15px; border-radius: 10px; display: none; line-height: 1.5;">
+              <strong id="feedback-title"></strong>
+              <p id="feedback-text" style="margin: 5px 0 0 0;"></p>
+            </div>
+            <button id="next-btn" onclick="nextQuestion()" style="margin-top: 15px; background: #c41e3a; color: white; width: 100%; padding: 15px; border: none; border-radius: 10px; cursor: pointer; font-size: 1rem; font-weight: bold; display: none;">Siguiente Pregunta</button>
           </div>
-          <button id="next-btn" onclick="nextQuestion()" style="margin-top: 15px; background: #c41e3a; color: white; width: 100%; padding: 15px; border: none; border-radius: 10px; cursor: pointer; font-size: 1rem; font-weight: bold; display: none;">Siguiente Pregunta</button>
-        </div>
-        <div id="score-container" style="display: none; text-align: center;">
-          <h2 style="color: #c41e3a;">Resultados Finales</h2>
-          <p id="final-score" style="font-size: 2.5rem; font-weight: bold; margin: 20px 0;"></p>
-          <p id="mensaje-final" style="font-size: 1.2rem; margin-bottom: 20px;"></p>
-          <button style="width:100%; padding: 15px; background: #1a1a1a; color: white; border: none; border-radius: 10px; cursor: pointer; font-size: 1rem; font-weight: bold;" onclick="reiniciarTriviaPro()">Jugar otra vez</button>
+          <div id="score-container" style="display: none; text-align: center;">
+            <h2 style="color: #c41e3a;">Resultados Finales</h2>
+            <p id="final-score" style="font-size: 2.5rem; font-weight: bold; margin: 20px 0;"></p>
+            <p id="mensaje-final" style="font-size: 1.2rem; margin-bottom: 20px;"></p>
+            <button style="width:100%; padding: 15px; background: #1a1a1a; color: white; border: none; border-radius: 10px; cursor: pointer; font-size: 1rem; font-weight: bold;" onclick="reiniciarTriviaPro()">Jugar otra vez</button>
+          </div>
         </div>
       </div>
     </div>
   </div>
-</div>
-
-<style>
-.options-grid button {
-  padding: 15px;
-  border: 2px solid #1a1a1a;
-  background: white;
-  border-radius: 10px;
-  cursor: pointer;
-  font-size: 1rem;
-  transition: 0.2s;
-  text-align: left;
-}
-.options-grid button:hover:not(:disabled) {
-  background: #f0f0f0;
-  border-color: #c41e3a;
-}
-.options-grid button:disabled {
-  cursor: not-allowed;
-  opacity: 0.7;
-}
-.feedback-correct { background-color: #d4edda; color: #155724; border: 1px solid #c3e6cb; }
-.feedback-wrong { background-color: #f8d7da; color: #721c24; border: 1px solid #f5c6cb; }
-</style>
 
 <script>
-// ===== FUNCIONES DE PESTAÑAS =====
 function mostrarTab(tab) {
   document.getElementById('tab-hemeroteca').style.display = 'none';
   document.getElementById('tab-gamer').style.display = 'none';
@@ -220,7 +192,6 @@ function mostrarSubTab(subtab) {
   }
 }
 
-// ===== JUEGO POLLITO =====
 const canvas = document.getElementById('juegoPio');
 const ctx = canvas.getContext('2d');
 let pollo = { x: 50, y: 150, vy: 0, saltando: false, ancho: 35, alto: 35 };
@@ -360,7 +331,6 @@ canvas.addEventListener('touchstart', e => {
   else saltar();
 });
 
-// ===== TRIVIA =====
 const questions = [
   {
     q: "¿Cuánto tiempo fue Flor de Luna Pila la DT de Pío?",
